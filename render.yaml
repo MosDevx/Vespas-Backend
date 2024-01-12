@@ -1,18 +1,18 @@
 databases:
-  - name: bookingapi
-    databaseName: bookingapi
-    user: bookingapi_user
+  - name: vespa-database
+    databaseName: vespa_database
+    user: vespa_database_user
 
 services:
   - type: web
-    name: booking-api
+    name: Vespas-server
     runtime: ruby
     buildCommand: './bin/render-build.sh'
     startCommand: 'bundle exec puma -C config/puma.rb'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: bookingapi
+          name: vespa-database
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
