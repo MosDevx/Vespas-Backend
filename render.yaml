@@ -1,7 +1,7 @@
 databases:
-  - name: bookingapi
-    databaseName: bookingapi
-    user: bookingapi_user
+  - name: vespa-database
+    databaseName: vespa_database
+    user: vespa_database_user
 
 services:
   - type: web
